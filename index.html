@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish EMI Loan Calculator</title>
+    <!-- Favicon for the title bar/browser tab using an emoji embedded in SVG data URI -->
+    <!-- This provides a lightweight and widely supported way to display an icon in the browser tab. -->
+    <link rel="icon" href="assets/logo.png" type="image/png">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+</head>
+<body>
+
+    <!-- Main container for the entire EMI calculator application -->
+    <div class="calculator-container">
+        
+        <!-- Header section of the calculator -->
+        <div class="header">
+            <!-- Main title with a calculator icon -->
+            <h1><i class="fas fa-calculator"></i> EMI Calculator</h1>
+            <!-- Subtitle providing instructions -->
+            <p>Enter your loan details below.</p>
+        </div>
+
+        <!-- Form for EMI input fields -->
+        <form id="emiForm" class="emi-form">
+            <!-- Form group for Loan Amount input -->
+            <div class="form-group">
+                <label for="principal">Loan Amount ($)</label>
+                <!-- Icon for loan amount input -->
+                <i class="fas fa-dollar-sign input-icon"></i>
+                <!-- Input field for the principal loan amount -->
+                <input type="number" id="principal" class="form-input" placeholder="e.g., 500000" required>
+            </div>
+
+            <!-- Form group for Annual Interest Rate input -->
+            <div class="form-group">
+                <label for="interest">Annual Interest Rate (%)</label>
+                <!-- Icon for interest rate input -->
+                <i class="fas fa-percent input-icon"></i>
+                <!-- Input field for the annual interest rate -->
+                <input type="number" id="interest" step="0.01" class="form-input" placeholder="e.g., 7.5" required>
+            </div>
+
+            <!-- Form group for Loan Tenure input -->
+            <div class="form-group">
+                <label for="tenure">Loan Tenure (Years)</label>
+                <!-- Icon for loan tenure input -->
+                <i class="fas fa-calendar-alt input-icon"></i>
+                <!-- Input field for the loan tenure in years -->
+                <input type="number" id="tenure" class="form-input" placeholder="e.g., 10" required>
+            </div>
+
+            <!-- Button to trigger the EMI calculation -->
+            <button type="submit" class="calculate-btn">
+                <!-- Icon for the calculate button -->
+                <i class="fas fa-hand-holding-usd"></i> Calculate EMI
+            </button>
+        </form>
+
+        <!-- Section to display calculation results, initially hidden -->
+        <div id="results" class="results-section">
+            <!-- Result item for Monthly EMI, highlighted for prominence -->
+            <div class="result-item highlight">
+                <!-- Label for Monthly EMI with an icon -->
+                <span class="label"><i class="fas fa-coins"></i> Monthly EMI</span>
+                <!-- Display area for the calculated monthly EMI -->
+                <span id="monthly-emi" class="value">$0.00</span>
+            </div>
+            <!-- Result item for Total Interest -->
+            <div class="result-item">
+                <!-- Label for Total Interest with an icon -->
+                <span class="label"><i class="fas fa-chart-line"></i> Total Interest</span>
+                <!-- Display area for the calculated total interest -->
+                <span id="total-interest" class="value">$0.00</span>
+            </div>
+            <!-- Result item for Total Payment -->
+            <div class="result-item">
+                <!-- Label for Total Payment with an icon -->
+                <span class="label"><i class="fas fa-money-bill-wave"></i> Total Payment</span>
+                <!-- Display area for the calculated total payment -->
+                <span id="total-payment" class="value">$0.00</span>
+            </div>
+        </div>
+        
+        <!-- Error message box, initially hidden -->
+        <div id="error-box" class="error-box">
+            <!-- Paragraph to display specific error messages -->
+            <p id="error-message"></p>
+        </div>
+
+    </div>
+</body>
+</html>
+<!-- Link to external CSS for styling the EMI calculator -->
+<link rel="stylesheet" href="style/beauty.css">
+<!-- Link to external JavaScript for EMI calculation logic -->
+ <script src="js/logic.js"></script>
